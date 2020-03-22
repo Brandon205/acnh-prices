@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Fish from './Fish';
+import Bugs from './Bugs';
+import AllPrices from './AllPrices';
 
-function App() {
+export default function App() {
+  const [selected, setSelected] = useState('AllPrices');
+
+  let content;
+  switch(selected) {
+    case 'Fish':
+      content = (<Fish />);
+      break;
+    case 'Bugs':
+      content = (<Bugs />);
+      break;
+    case 'AllPrices':
+      content = (<AllPrices />);
+      break;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className="tabs" onClick={() => setSelected('Fish')}>Fish</div>
+      <div className="tabs" onClick={() => setSelected('AllPrices')}>AllPrices</div>
+      <div className="tabs" onClick={() => setSelected('Bugs')}>Bugs</div>
+      {content}
     </div>
-  );
+  )
 }
-
-export default App;
