@@ -51,9 +51,11 @@ export default function App() {
 
   return (
     <div className="App">
-      <div className="tabs" onClick={() => setSelected('Fish')}>Fish</div>
-      <div className="tabs" onClick={() => setSelected('AllPrices')}>AllPrices</div>
-      <div className="tabs" onClick={() => setSelected('Bugs')}>Bugs</div>
+      <header>
+        <div className="tabs" onClick={() => setSelected('Fish')}>Fish</div>
+        <div className="tabs" onClick={() => setSelected('All Prices')}>AllPrices</div>
+        <div className="tabs" onClick={() => setSelected('Bugs')}>Bugs</div>
+      </header>
       <input value={filterValue} onChange={(e) => handleFilterChange(e)}/>
       {content}
     </div>
