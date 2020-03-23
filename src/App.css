@@ -2,6 +2,7 @@
 yellow button: #FDE46A
 button font color: #834B1C
 font-family: 'Roboto Slab', serif;
+red: #C52D28
 */
 body {
   background-color: #FDFDEB;
@@ -22,6 +23,8 @@ input {
 .tabs {
   font-size: 2em;
   font-weight: bold;
+  color: #FDE46A;
+  background-color: #C52D28;
   width: 33vw;
   height: 5vh;
   border: 1px solid black;
@@ -31,11 +34,11 @@ input {
 .tabs:hover {
   height: 6vh;
   cursor: pointer;
-  background-color: rgb(250, 219, 62);
+  background-color: rgb(177, 13, 7);
 }
 
 .tab-bkg {
-  background-color: rgb(250, 219, 62);
+  background-color: rgb(177, 13, 7);
   height: 6vh;
 }
 
@@ -47,7 +50,9 @@ input {
 
 .animal {
   font-size: 2em;
+  color: #834B1C;
   display: flex;
+  background-color: #FDE46A;
   justify-content: space-between;
   width: 70vw;
   height: 6vh;
@@ -55,6 +60,8 @@ input {
   border-radius: 10px;
   margin-bottom: 5px;
   padding: 5px;
+  overflow: scroll;
+  cursor: default;
 }
 
 .prices {
@@ -66,4 +73,10 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media only screen and (max-width: 500px) {
+  .App { 
+    font-size: .6em;
+  }
 }
