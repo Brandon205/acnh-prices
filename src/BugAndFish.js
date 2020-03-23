@@ -5,7 +5,7 @@ export default function BugAndFish(props) {
 
     return (
         <div className="price-list">
-            <h1>Hello from bug and fish</h1>
+            <h1>All ACNH Animals: </h1>
             {mappedAnimals}
         </div>
     )

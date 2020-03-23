@@ -1,7 +1,22 @@
+/* tan color: #FDFDEB 
+yellow button: #FDE46A
+button font color: #834B1C
+font-family: 'Roboto Slab', serif;
+*/
+body {
+  background-color: #FDFDEB;
+}
+
 header {
   margin: 20px;
   display: flex;
   justify-content: space-around;
+}
+
+input {
+  width: 55vw;
+  font-size: 1.5em;
+  border-radius: 10px;
 }
 
 .tabs {
@@ -15,15 +30,19 @@ header {
 
 .tabs:hover {
   height: 6vh;
+  cursor: pointer;
+  background-color: rgb(250, 219, 62);
 }
 
 .tab-bkg {
-  background-color: lightgray;
+  background-color: rgb(250, 219, 62);
+  height: 6vh;
 }
 
 .App {
   text-align: center;
   margin: 0;
+  font-family: 'Roboto Slab', serif;
 }
 
 .animal {
@@ -31,10 +50,11 @@ header {
   display: flex;
   justify-content: space-between;
   width: 70vw;
-  height: 5vh;
+  height: 6vh;
   border: 1px solid black;
   border-radius: 10px;
-  margin-bottom: 2px;
+  margin-bottom: 5px;
+  padding: 5px;
 }
 
 .prices {

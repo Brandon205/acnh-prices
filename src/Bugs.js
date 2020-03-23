@@ -5,7 +5,7 @@ export default function Bugs(props) {
 
     return (
         <div className="price-list">
-            <h1>Bugs:</h1>
+            <h1>ACNH Bugs:</h1>
             {mappedBugs}
         </div>
     )
