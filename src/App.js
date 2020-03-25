@@ -57,7 +57,8 @@ export default function App() {
         <div className={selected === "AllPrices" ? "tabs tab-bkg" : "tabs"} onClick={() => setSelected('AllPrices')}>All Prices</div>
         <div className={selected === "Bugs" ? "tabs tab-bkg" : "tabs"} onClick={() => setSelected('Bugs')}>Bugs</div>
       </header>
-      <input value={filterValue} onChange={(e) => handleFilterChange(e)} placeholder="Search Here" />
+      <label htmlFor="search"></label>
+      <input name="search" value={filterValue} onChange={(e) => handleFilterChange(e)} placeholder="Search Here" />
       {content}
     </div>
   )
