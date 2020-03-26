@@ -6,6 +6,7 @@ red: #C52D28
 */
 body {
   background-color: #FDFDEB;
+  text-align: center;
 }
 
 header {
@@ -16,8 +17,13 @@ header {
 
 input {
   width: 55vw;
-  font-size: 1.5em;
+  font-size: 2em;
   border-radius: 10px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5em;
 }
 
 .tabs {
@@ -58,8 +64,8 @@ input {
   height: 6vh;
   border: 1px solid black;
   border-radius: 10px;
-  margin-bottom: 5px;
-  padding: 5px;
+  margin-bottom: 10px;
+  padding: 7px;
   overflow: scroll;
   cursor: default;
 }
@@ -73,6 +79,7 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 25px;
 }
 
 @media only screen and (max-width: 500px) {
