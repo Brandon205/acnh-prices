@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import fishPrices from './assets/fish.json';
 import bugPrices from './assets/bugs.json';
-import allPrices from './assets/oldAllAnimals.json';
+import allPrices from './assets/allAnimals.json';
 import Fish from './Fish';
 import Bugs from './Bugs';
 import BugAndFish from './BugAndFish';
@@ -17,7 +17,6 @@ export default function App() {
   const [fishes, setFishes] = useState(objFishPrices); // Fishes to show 
   const [bugs, setBugs] = useState(objBugPrices);  // Bugs to show
   const [bugsAndFish, setBugsAndFish] = useState(objAllPrices); // All to show
-
 
   let content;
   switch(selected) {
@@ -36,7 +35,7 @@ export default function App() {
 
   let filteredList = "";
   let handleFilterChange = (e) => {
-    if (selected === "AllPrices") { //set the props for the thing to render to the filtered list
+    if (selected === "AllPrices") { // Set the props for the thing to render to the filtered list
       filteredList = objAllPrices.filter(animal => animal[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setBugsAndFish(filteredList);
     } else if (selected === "Fish") {
