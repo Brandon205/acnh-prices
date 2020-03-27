@@ -4,6 +4,7 @@ button font color: #834B1C
 font-family: 'Roboto Slab', serif;
 red: #C52D28
 */
+
 body {
   background-color: #FDFDEB;
   text-align: center;
@@ -24,6 +25,13 @@ input {
 
 h1 {
   font-size: 2.5em;
+  margin-bottom: 15px;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
 .tabs {
@@ -66,8 +74,7 @@ h1 {
   border-radius: 10px;
   margin-bottom: 10px;
   padding: 7px;
-  overflow: scroll;
-  cursor: default;
+  cursor: pointer;
 }
 
 .prices {
@@ -82,8 +89,38 @@ h1 {
   margin-bottom: 25px;
 }
 
+.none {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #FDFDEB;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 75%;
+  cursor: default;
+}
+
 @media only screen and (max-width: 500px) {
   .App { 
     font-size: .6em;
+  }
+
+  .animal {
+    overflow: scroll;
   }
 }
