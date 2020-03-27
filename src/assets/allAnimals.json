@@ -5,6 +5,7 @@
     "Ant": { "location": "Rotten Food", "price": "N/A", "time": "All Day", "months": "Year-Round"},
     "Arapaima": { "location": "River", "price": 10000, "time": "4pm - 9am", "months": "June-September(N), December-March(S)"},
     "Arowana": { "location": "River", "price": 10000, "time": "4pm - 9am", "months": "June-September(N), December-March(S)"},
+    "Atlas Moth": { "location": "On Trees", "price": 3000, "time": "7pm - 4am", "months": "April-September(N), October-March(S)"},
     "Bagworm": { "location": "Falls From Shaking Trees", "price": 600, "time": "All Day", "months": "Year-Round"},
     "Banded Dragonfly": { "location": "Flying", "price": 4500, "time": "8am - 5pm", "months": "May-October(N), November-April(S)"},
     "Barred Knifejaw": { "location": "Sea", "price": 5000, "time": "All Day", "months": "March-November(N), September-May(S)"},
