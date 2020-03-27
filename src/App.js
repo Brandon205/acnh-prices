@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import fishPrices from './fish.json';
-import bugPrices from './bugs.json';
-import allPrices from './allAnimals.json';
+import fishPrices from './assets/fish.json';
+import bugPrices from './assets/oldBugs.json';
+import allPrices from './assets/oldAllAnimals.json';
 import Fish from './Fish';
 import Bugs from './Bugs';
 import BugAndFish from './BugAndFish';
@@ -12,7 +12,7 @@ export default function App() {
   let objBugPrices = Object.entries(bugPrices);
   let objAllPrices = Object.entries(allPrices);
 
-  const [selected, setSelected] = useState('AllPrices');
+  const [selected, setSelected] = useState('Fish');
   const [filterValue, setFilterValue] = useState('');
   const [fishes, setFishes] = useState(objFishPrices); // Fishes to show 
   const [bugs, setBugs] = useState(objBugPrices);  // Bugs to show
