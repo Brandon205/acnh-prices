@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 
 export default function Fish(props) {
     const [modal, setModal] = useState('');
+    var formatter = new Intl.NumberFormat();
     
-    let mappedFish = props.fish.map( (fish, id) => <div className="animal" key={id} onClick={() => expand(fish)}>{fish[0]} <p className="prices">{fish[1].price}</p></div> );
+    let mappedFish = props.fish.map( (fish, id) => <div className="animal" key={id} onClick={() => expand(fish)}>{fish[0]} <p className="prices">{formatter.format(fish[1].price)}</p></div> );
 
     let expand = (fish) => {
-        var formatter = new Intl.NumberFormat();
         let content = (
         <div className="modal" onClick={() => setModal('')}>
                 <div className="modal-content">

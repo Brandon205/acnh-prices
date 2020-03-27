@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import fishPrices from './assets/fish.json';
-import bugPrices from './assets/oldBugs.json';
+import bugPrices from './assets/bugs.json';
 import allPrices from './assets/oldAllAnimals.json';
 import Fish from './Fish';
 import Bugs from './Bugs';
