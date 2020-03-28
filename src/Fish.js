@@ -10,6 +10,7 @@ export default function Fish(props) {
         let content = (
         <div className="modal" onClick={() => setModal('')}>
                 <div className="modal-content">
+                    <img src={process.env.PUBLIC_URL + '/images/' + fish[0] + '.png'} alt={fish[0]} />
                     <h1>{fish[0]}</h1>
                     <hr />
                     <h3>Swims around the {fish[1].location}</h3>

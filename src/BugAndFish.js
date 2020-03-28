@@ -10,6 +10,7 @@ export default function BugAndFish(props) {
         let content = (
             <div className="modal" onClick={() => setModal('')}>
                 <div className="modal-content">
+                    <img src={process.env.PUBLIC_URL + '/images/' + animal[0] + '.png'} alt={animal[0]}/>
                     <h1>{animal[0]}</h1>
                     <hr />
                     <h3>{animal[1].location}</h3>

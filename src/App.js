@@ -59,7 +59,6 @@ export default function App() {
       <div className="search">
         <label htmlFor="searchbar" style={{display: 'none'}}>Search</label>
         <input name="searchbar" value={filterValue} onChange={(e) => handleFilterChange(e)} placeholder="Search Here" />
-        <i class="fa fa-search"></i>
       </div>
       {content}
     </div>
