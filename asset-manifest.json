@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/acnh-prices/static/css/main.67145202.chunk.css",
-    "main.js": "/acnh-prices/static/js/main.b0c469e7.chunk.js",
-    "main.js.map": "/acnh-prices/static/js/main.b0c469e7.chunk.js.map",
+    "main.js": "/acnh-prices/static/js/main.126a012d.chunk.js",
+    "main.js.map": "/acnh-prices/static/js/main.126a012d.chunk.js.map",
     "runtime-main.js": "/acnh-prices/static/js/runtime-main.1f7a7b01.js",
     "runtime-main.js.map": "/acnh-prices/static/js/runtime-main.1f7a7b01.js.map",
     "static/js/2.e9a50208.chunk.js": "/acnh-prices/static/js/2.e9a50208.chunk.js",
     "static/js/2.e9a50208.chunk.js.map": "/acnh-prices/static/js/2.e9a50208.chunk.js.map",
     "index.html": "/acnh-prices/index.html",
-    "precache-manifest.b9b956a67407994605ab987701627c2a.js": "/acnh-prices/precache-manifest.b9b956a67407994605ab987701627c2a.js",
+    "precache-manifest.4489916b296f6dfac85c7111b30284bf.js": "/acnh-prices/precache-manifest.4489916b296f6dfac85c7111b30284bf.js",
     "service-worker.js": "/acnh-prices/service-worker.js",
     "static/css/main.67145202.chunk.css.map": "/acnh-prices/static/css/main.67145202.chunk.css.map",
     "static/js/2.e9a50208.chunk.js.LICENSE.txt": "/acnh-prices/static/js/2.e9a50208.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.1f7a7b01.js",
     "static/js/2.e9a50208.chunk.js",
     "static/css/main.67145202.chunk.css",
-    "static/js/main.b0c469e7.chunk.js"
+    "static/js/main.126a012d.chunk.js"
   ]
 }
