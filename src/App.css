@@ -70,13 +70,13 @@ hr {
   color: #FDE46A;
   background-color: #C52D28;
   width: 33vw;
-  height: 6vh;
+  height: 5vh;
   border: 1px solid black;
   border-radius: 0 0 10px 10px;
 }
 
 .tabs:hover {
-  height: 7vh;
+  height: 6vh;
   cursor: pointer;
   background-color: rgb(177, 13, 7);
 }
