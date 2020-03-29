@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/acnh-prices/static/css/main.67145202.chunk.css",
-    "main.js": "/acnh-prices/static/js/main.f8ce79da.chunk.js",
-    "main.js.map": "/acnh-prices/static/js/main.f8ce79da.chunk.js.map",
+    "main.css": "/acnh-prices/static/css/main.9e4943df.chunk.css",
+    "main.js": "/acnh-prices/static/js/main.22803965.chunk.js",
+    "main.js.map": "/acnh-prices/static/js/main.22803965.chunk.js.map",
     "runtime-main.js": "/acnh-prices/static/js/runtime-main.1f7a7b01.js",
     "runtime-main.js.map": "/acnh-prices/static/js/runtime-main.1f7a7b01.js.map",
     "static/js/2.e9a50208.chunk.js": "/acnh-prices/static/js/2.e9a50208.chunk.js",
     "static/js/2.e9a50208.chunk.js.map": "/acnh-prices/static/js/2.e9a50208.chunk.js.map",
     "index.html": "/acnh-prices/index.html",
-    "precache-manifest.fca241b99be75f355e67f75a6a6287e2.js": "/acnh-prices/precache-manifest.fca241b99be75f355e67f75a6a6287e2.js",
+    "precache-manifest.ed1bc270eb12ac95af923cd9ec74cc82.js": "/acnh-prices/precache-manifest.ed1bc270eb12ac95af923cd9ec74cc82.js",
     "service-worker.js": "/acnh-prices/service-worker.js",
-    "static/css/main.67145202.chunk.css.map": "/acnh-prices/static/css/main.67145202.chunk.css.map",
+    "static/css/main.9e4943df.chunk.css.map": "/acnh-prices/static/css/main.9e4943df.chunk.css.map",
     "static/js/2.e9a50208.chunk.js.LICENSE.txt": "/acnh-prices/static/js/2.e9a50208.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.1f7a7b01.js",
     "static/js/2.e9a50208.chunk.js",
-    "static/css/main.67145202.chunk.css",
-    "static/js/main.f8ce79da.chunk.js"
+    "static/css/main.9e4943df.chunk.css",
+    "static/js/main.22803965.chunk.js"
   ]
 }
