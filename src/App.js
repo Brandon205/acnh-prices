@@ -14,7 +14,7 @@ export default function App() {
 
   const [selected, setSelected] = useState('AllPrices');
   const [filterValue, setFilterValue] = useState('');
-  const [fishes, setFishes] = useState(objFishPrices); // Fishes to show 
+  const [fishes, setFishes] = useState(objFishPrices); // Fish to show 
   const [bugs, setBugs] = useState(objBugPrices);  // Bugs to show
   const [bugsAndFish, setBugsAndFish] = useState(objAllPrices); // All to show
 
@@ -56,10 +56,6 @@ export default function App() {
         <div className={selected === "AllPrices" ? "tabs tab-bkg" : "tabs"} onClick={() => setSelected('AllPrices')}>All Prices</div>
         <div className={selected === "Bugs" ? "tabs tab-bkg" : "tabs"} onClick={() => setSelected('Bugs')}>Bugs</div>
       </header>
-      {/* <div className="search">
-        <label htmlFor="searchbar" style={{display: 'none'}}>Search</label>
-        <input name="searchbar" value={filterValue} onChange={(e) => handleFilterChange(e)} placeholder="Search Here" />
-      </div> */}
       <div className="wrap">
         <div className="search">
           <input type="text" value={filterValue} onChange={(e) => handleFilterChange(e)} className="searchTerm" placeholder="Search Here" />
