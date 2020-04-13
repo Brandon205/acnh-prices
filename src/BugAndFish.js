@@ -4,7 +4,7 @@ export default function BugAndFish(props) {
     const [modal, setModal] = useState('');
     var formatter = new Intl.NumberFormat();
 
-    let mappedAnimals = props.all.map( (animal, id) => <div className="animal" key={id} onClick={() => expand(animal)}>{animal[0]} <p className="prices">{animal[1].price}</p></div> );
+    let mappedAnimals = props.all.map( (animal, id) => <div className="animal" key={id} onClick={() => expand(animal)}>{animal[0]} <p className="prices">{formatter.format(animal[1].price)}</p></div> );
 
     let expand = (animal) => {
         let content = (

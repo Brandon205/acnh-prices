@@ -40,7 +40,7 @@
     "Damselfly": { "location": "Flying", "price": 500, "time": "All Day", "months": "November-February(N), May-August(S)"},
     "Darner Dragonfly": { "location": "Flying", "price": 230, "time": "8am - 5pm", "months": "April-October(N), October-April(S)"},
     "Diving Beetle": { "location": "Ponds/Rivers", "price": 800, "time": "8am - 7pm", "months": "May-September(N), November-March(S)"},
-    "Dorado": { "location": "River", "price": 150000, "time": "4am - 9pm", "months": "June-September(N), December-March(S)"},
+    "Dorado": { "location": "River", "price": 15000, "time": "4am - 9pm", "months": "June-September(N), December-March(S)"},
     "Drone Beetle": { "location": "On Trees", "price": 200, "time": "All Day", "months": "June-August(N), December-February(S)"},
     "Dung Beetle": { "location": "Pushing Snowballs", "price": 3000, "time": "All Day", "months": "December-February(N), June-March(S)"},
     "Earth-Boring Dung Beetle": { "location": "On Ground", "price": 300, "time": "All Day", "months": "July-September(N), January-March(S)"},
