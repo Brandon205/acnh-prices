@@ -14,7 +14,7 @@ export default function BugAndFish(props) {
                     <h1>{animal[0]}</h1>
                     <hr />
                     <h3>{animal[1].location}</h3>
-                    <h3>Sells for {animal[1].price === "N/A" ? animal[1].price : formatter.format(animal[1].price)} bells</h3>
+                    <h3>Sells for {formatter.format(animal[1].price)} bells</h3>
                     <h3>{animal[1].time}</h3>
                     <h3>{animal[1].months}</h3>
                     <i>N - Northern Hemishpere, S - Southern Hemishpere</i>

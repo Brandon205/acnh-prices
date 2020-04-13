@@ -4,7 +4,7 @@ export default function Bugs(props) {
     const [modal, setModal] = useState('');
     var formatter = new Intl.NumberFormat();
 
-    let mappedBugs = props.bugs.map( (bug, id) => <div className="animal" key={id} onClick={() => expand(bug)}>{bug[0]} <p className="prices">{bug[1].price === "N/A" ? bug[1].price : formatter.format(bug[1].price)}</p> </div>);
+    let mappedBugs = props.bugs.map( (bug, id) => <div className="animal" key={id} onClick={() => expand(bug)}>{bug[0]} <p className="prices">{formatter.format(bug[1].price)}</p> </div>);
 
     let expand = (bug) => {
         let content = (
@@ -14,7 +14,7 @@ export default function Bugs(props) {
                     <h1>{bug[0]}</h1>
                     <hr />
                     <h3>{bug[1].location}</h3>
-                    <h3>Sells for {bug[1].price === "N/A" ? bug[1].price : formatter.format(bug[1].price)} bells</h3>
+                    <h3>Sells for {formatter.format(bug[1].price)} bells</h3>
                     <h3>{bug[1].time}</h3>
                     <h3>{bug[1].months}</h3>
                     <i>N - Northern Hemishpere, S - Southern Hemishpere</i>
