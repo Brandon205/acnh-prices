@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import quicksort from './sorting';
 import fishPrices from './assets/fish.json';
 import bugPrices from './assets/bugs.json';
 import allPrices from './assets/allAnimals.json';
@@ -8,9 +9,12 @@ import BugAndFish from './BugAndFish';
 import './App.css';
 
 export default function App() {
-  let objFishPrices = Object.entries(fishPrices);
-  let objBugPrices = Object.entries(bugPrices);
-  let objAllPrices = Object.entries(allPrices);
+  const objFishPrices = Object.entries(fishPrices);
+  const objBugPrices = Object.entries(bugPrices);
+  const objAllPrices = Object.entries(allPrices);
+  let currFishPrices;
+  let currBugPrices;
+  let currAllPrices;
 
   const [selected, setSelected] = useState('AllPrices');
   const [filterValue, setFilterValue] = useState('');
@@ -33,16 +37,40 @@ export default function App() {
       content = (<BugAndFish all={bugsAndFish} />);
   }
 
+  // For sorting by price rather than name
+  let sortByPrice = () => {
+    if (selected === 'AllPrices') {
+      currAllPrices = quicksort(objAllPrices)
+      setBugsAndFish(currAllPrices);
+    } else if (selected === 'Fish') {
+      currFishPrices = quicksort(objFishPrices)
+      setFishes(currFishPrices)
+    } else if (selected === 'Bugs') {
+      currBugPrices = quicksort(objBugPrices)
+      setBugs(currBugPrices)
+    }
+  }
+  let sortByName = () => {
+    console.log(selected)
+    if (selected === 'AllPrices') {
+      setBugsAndFish(objAllPrices);
+    } else if (selected === 'Fish') {
+      setBugsAndFish(objFishPrices);
+    } else if (selected === 'Bugs') {
+      setBugsAndFish(objBugPrices);
+    }
+  }
+
   let filteredList = "";
   let handleFilterChange = (e) => {
     if (selected === "AllPrices") { // Set the props for the thing to render to the filtered list
       filteredList = objAllPrices.filter(animal => animal[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setBugsAndFish(filteredList);
     } else if (selected === "Fish") {
-      filteredList = objFishPrices.filter(fish => fish[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+      filteredList = currFishPrices.filter(fish => fish[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setFishes(filteredList);
     } else if (selected === "Bugs") {
-      filteredList = objBugPrices.filter(bug => bug[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+      filteredList = currBugPrices.filter(bug => bug[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setBugs(filteredList);
     }
     setFilterValue(e.target.value);
@@ -64,6 +92,7 @@ export default function App() {
           </button>
         </div>
       </div>
+      <div className="list-top"><p onClick={() => sortByName()}>Name</p> <p className="prices" onClick={() => sortByPrice()}>Price</p></div>
       {content}
     </div>
   )

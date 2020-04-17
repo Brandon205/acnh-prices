@@ -27,7 +27,6 @@ export default function BugAndFish(props) {
     return (
         <div className="price-list">
             <h1>All ACNH Animals: </h1>
-            <div className="list-top"><p >Name</p> <p className="prices">Price</p></div>
             {mappedAnimals}
             {modal}
         </div>
