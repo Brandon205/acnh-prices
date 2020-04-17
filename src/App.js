@@ -59,7 +59,7 @@ export default function App() {
       <div className="wrap">
         <div className="search">
           <input type="text" value={filterValue} onChange={(e) => handleFilterChange(e)} className="searchTerm" placeholder="Search Here" />
-          <button type="submit" class="searchButton">
+          <button type="submit" className="searchButton">
             >>
           </button>
         </div>
