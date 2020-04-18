@@ -8,46 +8,30 @@ import Bugs from './Bugs';
 import BugAndFish from './BugAndFish';
 import './App.css';
 
+const objFishPrices = [...fishPrices];
+const objBugPrices = [...bugPrices];
+const objAllPrices = [...allPrices];
 export default function App() {
-  const objFishPrices = fishPrices;
-  const objBugPrices = bugPrices;
-  const objAllPrices = allPrices;
   let currFishPrices;
   let currBugPrices;
   let currAllPrices;
 
   const [selected, setSelected] = useState('AllPrices');
   const [filterValue, setFilterValue] = useState('');
-  const [fishes, setFishes] = useState(objFishPrices); // Fish to show 
+  const [fishes, setFishes] = useState(fishPrices); // Fish to show 
   const [bugs, setBugs] = useState(objBugPrices);  // Bugs to show
   const [bugsAndFish, setBugsAndFish] = useState(objAllPrices); // All to show
-
-  // To display the correct content
-  let content;
-  switch(selected) {
-    case 'Fish':
-      content = (<Fish fish={fishes} />);
-      break;
-    case 'Bugs':
-      content = (<Bugs bugs={bugs} />);
-      break;
-    case 'AllPrices':
-      content = (<BugAndFish all={bugsAndFish} />);
-      break;
-    default:
-      content = (<BugAndFish all={bugsAndFish} />);
-  }
 
   // For sorting by price rather than name
   let sortByPrice = () => {
     if (selected === 'AllPrices') {
-      currAllPrices = quicksort(objAllPrices)
+      currAllPrices = quicksort(allPrices)
       setBugsAndFish(currAllPrices);
     } else if (selected === 'Fish') {
-      currFishPrices = quicksort(objFishPrices)
+      currFishPrices = quicksort(fishPrices)
       setFishes(currFishPrices)
     } else if (selected === 'Bugs') {
-      currBugPrices = quicksort(objBugPrices)
+      currBugPrices = quicksort(bugPrices)
       setBugs(currBugPrices)
     }
   }
@@ -56,6 +40,7 @@ export default function App() {
     if (selected === 'AllPrices') {
       setBugsAndFish(objAllPrices);
     } else if (selected === 'Fish') {
+      console.log(objFishPrices);
       setFishes(objFishPrices);
     } else if (selected === 'Bugs') {
       setBugs(objBugPrices);
@@ -76,6 +61,22 @@ export default function App() {
     }
     setFilterValue(e.target.value);
   }
+
+    // To display the correct content
+    let content;
+    switch(selected) {
+      case 'Fish':
+        content = (<Fish fish={fishes} />);
+        break;
+      case 'Bugs':
+        content = (<Bugs bugs={bugs} />);
+        break;
+      case 'AllPrices':
+        content = (<BugAndFish all={bugsAndFish} />);
+        break;
+      default:
+        content = (<BugAndFish all={bugsAndFish} />);
+    }
 
   return (
     <div className="App">
