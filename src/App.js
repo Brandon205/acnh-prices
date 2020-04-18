@@ -11,7 +11,7 @@ import './App.css';
 export default function App() {
   const objFishPrices = Object.entries(fishPrices);
   const objBugPrices = Object.entries(bugPrices);
-  const objAllPrices = Object.entries(allPrices);
+  const objAllPrices = allPrices;
   let currFishPrices;
   let currBugPrices;
   let currAllPrices;
@@ -20,7 +20,7 @@ export default function App() {
   const [filterValue, setFilterValue] = useState('');
   const [fishes, setFishes] = useState(objFishPrices); // Fish to show 
   const [bugs, setBugs] = useState(objBugPrices);  // Bugs to show
-  const [bugsAndFish, setBugsAndFish] = useState(objAllPrices); // All to show
+  const [bugsAndFish, setBugsAndFish] = useState(allPrices); // All to show
 
   // To display the correct content
   let content;
@@ -54,7 +54,7 @@ export default function App() {
   // For sorting by name rather than price
   let sortByName = () => {
     if (selected === 'AllPrices') {
-      setBugsAndFish(objAllPrices);
+      setBugsAndFish(allPrices);
     } else if (selected === 'Fish') {
       setFishes(objFishPrices);
     } else if (selected === 'Bugs') {
@@ -65,7 +65,7 @@ export default function App() {
   let filteredList = "";
   let handleFilterChange = (e) => {
     if (selected === "AllPrices") { // Set the props for the thing to render to the filtered list
-      filteredList = objAllPrices.filter(animal => animal[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+      filteredList = allPrices.filter(animal => animal.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setBugsAndFish(filteredList);
     } else if (selected === "Fish") {
       filteredList = objFishPrices.filter(fish => fish[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
@@ -81,9 +81,9 @@ export default function App() {
     <div className="App">
       <h1>Animal Crossing New Horizons Sell Guide</h1>
       <header>
-        <div className={selected === "Fish" ? "tabs tab-bkg" : "tabs"} onClick={() => setSelected('Fish')}>Fish</div>
-        <div className={selected === "AllPrices" ? "tabs tab-bkg" : "tabs"} onClick={() => setSelected('AllPrices')}>All Prices</div>
-        <div className={selected === "Bugs" ? "tabs tab-bkg" : "tabs"} onClick={() => setSelected('Bugs')}>Bugs</div>
+        <div className={selected === "Fish" ? "tabs tab-bkg" : "tabs"} onClick={() => { setSelected('Fish'); setFilterValue(''); }}>Fish</div>
+        <div className={selected === "AllPrices" ? "tabs tab-bkg" : "tabs"} onClick={() => { setSelected('AllPrices'); setFilterValue(''); }}>All Prices</div>
+        <div className={selected === "Bugs" ? "tabs tab-bkg" : "tabs"} onClick={() => { setSelected('Bugs'); setFilterValue(''); }}>Bugs</div>
       </header>
       <div className="wrap">
         <div className="search">
