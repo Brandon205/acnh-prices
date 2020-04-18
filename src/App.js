@@ -9,8 +9,8 @@ import BugAndFish from './BugAndFish';
 import './App.css';
 
 export default function App() {
-  const objFishPrices = Object.entries(fishPrices);
-  const objBugPrices = Object.entries(bugPrices);
+  const objFishPrices = fishPrices;
+  const objBugPrices = bugPrices;
   const objAllPrices = allPrices;
   let currFishPrices;
   let currBugPrices;
@@ -20,7 +20,7 @@ export default function App() {
   const [filterValue, setFilterValue] = useState('');
   const [fishes, setFishes] = useState(objFishPrices); // Fish to show 
   const [bugs, setBugs] = useState(objBugPrices);  // Bugs to show
-  const [bugsAndFish, setBugsAndFish] = useState(allPrices); // All to show
+  const [bugsAndFish, setBugsAndFish] = useState(objAllPrices); // All to show
 
   // To display the correct content
   let content;
@@ -54,7 +54,7 @@ export default function App() {
   // For sorting by name rather than price
   let sortByName = () => {
     if (selected === 'AllPrices') {
-      setBugsAndFish(allPrices);
+      setBugsAndFish(objAllPrices);
     } else if (selected === 'Fish') {
       setFishes(objFishPrices);
     } else if (selected === 'Bugs') {
@@ -68,10 +68,10 @@ export default function App() {
       filteredList = allPrices.filter(animal => animal.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setBugsAndFish(filteredList);
     } else if (selected === "Fish") {
-      filteredList = objFishPrices.filter(fish => fish[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+      filteredList = fishPrices.filter(fish => fish[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setFishes(filteredList);
     } else if (selected === "Bugs") {
-      filteredList = objBugPrices.filter(bug => bug[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+      filteredList = bugPrices.filter(bug => bug[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setBugs(filteredList);
     }
     setFilterValue(e.target.value);
