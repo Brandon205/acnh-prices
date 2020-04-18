@@ -26,7 +26,6 @@ export default function Bugs(props) {
 
     return (
         <div className="price-list">
-            <h1>ACNH Bugs:</h1>
             {mappedBugs}
             {modal}
         </div>

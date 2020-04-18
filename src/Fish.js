@@ -26,7 +26,6 @@ export default function Fish(props) {
     
     return (
         <div className="price-list">
-            <h1>ACNH Fish:</h1>
             {mappedFish}
             {modal}
         </div>

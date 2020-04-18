@@ -53,7 +53,6 @@ export default function App() {
   }
   // For sorting by name rather than price
   let sortByName = () => {
-    console.log(selected)
     if (selected === 'AllPrices') {
       setBugsAndFish(objAllPrices);
     } else if (selected === 'Fish') {
@@ -93,8 +92,8 @@ export default function App() {
             >>
           </button>
         </div>
+      <div className="list-top"><button className="sort-button" onClick={() => sortByName()}>Name</button> <button className="sort-button" onClick={() => sortByPrice()}>Price</button></div>
       </div>
-      <div className="list-top"><button onClick={() => sortByName()}>Name</button> <button className="prices" onClick={() => sortByPrice()}>Price</button></div>
       {content}
     </div>
   )
