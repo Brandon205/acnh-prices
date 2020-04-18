@@ -22,6 +22,7 @@ export default function App() {
   const [bugs, setBugs] = useState(objBugPrices);  // Bugs to show
   const [bugsAndFish, setBugsAndFish] = useState(objAllPrices); // All to show
 
+  // To display the correct content
   let content;
   switch(selected) {
     case 'Fish':
@@ -50,14 +51,15 @@ export default function App() {
       setBugs(currBugPrices)
     }
   }
+  // For sorting by name rather than price
   let sortByName = () => {
     console.log(selected)
     if (selected === 'AllPrices') {
       setBugsAndFish(objAllPrices);
     } else if (selected === 'Fish') {
-      setBugsAndFish(objFishPrices);
+      setFishes(objFishPrices);
     } else if (selected === 'Bugs') {
-      setBugsAndFish(objBugPrices);
+      setBugs(objBugPrices);
     }
   }
 
@@ -92,7 +94,7 @@ export default function App() {
           </button>
         </div>
       </div>
-      <div className="list-top"><p onClick={() => sortByName()}>Name</p> <p className="prices" onClick={() => sortByPrice()}>Price</p></div>
+      <div className="list-top"><button onClick={() => sortByName()}>Name</button> <button className="prices" onClick={() => sortByPrice()}>Price</button></div>
       {content}
     </div>
   )
