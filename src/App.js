@@ -80,7 +80,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Animal Crossing New Horizons Sell Guide</h1>
+      <h1 className="title">Animal Crossing New Horizons Sell Guide</h1>
       <header>
         <div className={selected === "Fish" ? "tabs tab-bkg" : "tabs"} onClick={() => { setSelected('Fish'); setFilterValue(''); }}>Fish</div>
         <div className={selected === "AllPrices" ? "tabs tab-bkg" : "tabs"} onClick={() => { setSelected('AllPrices'); setFilterValue(''); }}>All Prices</div>
