@@ -21,24 +21,36 @@ body {
 }
 
 header {
-  margin: 20px;
+  margin: 0 20px 20px 20px;
   display: flex;
   justify-content: space-around;
 }
 
 h1 {
   font-size: 2.5em;
-  margin-bottom: 15px;
+  margin: 0;
 }
 
-hr {
+img { 
+  max-width: 75px;
+}
+
+.header-hr {
+  border: 0;
+  height: 2px;
+  background-color: black;
+  margin: 0;
+}
+
+.modal-hr {
   border: 0;
   height: 1px;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
-.title {
-  font-family: finkHeavy;
+.bells-img {
+  max-width: 50px;
+  max-height: 50px;
 }
 
 .search {
@@ -49,7 +61,7 @@ hr {
 
 .searchTerm {
   width: 100%;
-  font-size: 1.5em;
+  font-size: 1.8em;
   border: 3px solid #C52D28;
   border-right: none;
   padding: 5px;
@@ -107,7 +119,6 @@ hr {
 
 .animal {
   font-size: 2em;
-  font-family: finkHeavy;
   color: #834B1C;
   display: flex;
   background-color: #FDE46A;
@@ -115,8 +126,6 @@ hr {
   width: 70vw;
   height: 6vh;
   border: 1px solid black;
-  border-radius: 10px;
-  margin-bottom: 10px;
   padding: 7px;
   cursor: pointer;
 }
@@ -137,14 +146,17 @@ hr {
   font-size: 1.2em;
   display: flex;
   justify-content: space-between;
-  margin: 10px 0 25px 0;
+  margin: 10px 0 17px 0;
 }
 
 .sort-button {
   font-size: 1.2em;
-  padding: 10px;
-  border-radius: 25px;
+  color: #834B1C;
+  cursor: pointer;
+  margin: 0;
+  padding: 7px;
   background-color: #F1E26F;
+  border: 1px solid black;
 }
 
 .none {

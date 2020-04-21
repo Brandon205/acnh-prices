@@ -80,7 +80,8 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1 className="title">Animal Crossing New Horizons Sell Guide</h1>
+      <h1>Animal Crossing New Horizons Prices</h1>
+      <hr className="header-hr" />
       <header>
         <div className={selected === "Fish" ? "tabs tab-bkg" : "tabs"} onClick={() => { setSelected('Fish'); setFilterValue(''); }}>Fish</div>
         <div className={selected === "AllPrices" ? "tabs tab-bkg" : "tabs"} onClick={() => { setSelected('AllPrices'); setFilterValue(''); }}>All Prices</div>
@@ -89,11 +90,11 @@ export default function App() {
       <div className="wrap">
         <div className="search">
           <input type="text" value={filterValue} onChange={(e) => handleFilterChange(e)} className="searchTerm" placeholder="Search Here" />
-          <button type="submit" className="searchButton">
-            >>
+          <button type="submit" className="searchButton" onClick={() => setFilterValue('')}>
+            X
           </button>
         </div>
-      <div className="list-top"><button className="sort-button" onClick={() => sortByName()}>Name</button> <button className="sort-button" onClick={() => sortByPrice()}>Price</button></div>
+      <div className="list-top"><button className="sort-button" onClick={() => { sortByName(); setFilterValue('') }}>Name</button> <button className="sort-button" onClick={() => { sortByPrice(); setFilterValue('') }}>Price</button></div>
       </div>
       {content}
     </div>
