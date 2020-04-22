@@ -12,9 +12,9 @@ const objFishPrices = [...fishPrices];
 const objBugPrices = [...bugPrices];
 const objAllPrices = [...allPrices];
 export default function App() {
-  let currFishPrices;
-  let currBugPrices;
-  let currAllPrices;
+  let currFishPrices = fishPrices;
+  let currBugPrices = bugPrices;
+  let currAllPrices = allPrices;
 
   const [selected, setSelected] = useState('AllPrices');
   const [filterValue, setFilterValue] = useState('');
@@ -40,7 +40,6 @@ export default function App() {
     if (selected === 'AllPrices') {
       setBugsAndFish(objAllPrices);
     } else if (selected === 'Fish') {
-      console.log(objFishPrices);
       setFishes(objFishPrices);
     } else if (selected === 'Bugs') {
       setBugs(objBugPrices);
@@ -50,15 +49,15 @@ export default function App() {
   let filteredList = "";
   let handleFilterChange = (e) => {
     if (selected === "AllPrices") { // Set the props for the thing to render to the filtered list
-      filteredList = allPrices.filter(animal => animal.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+      filteredList = currAllPrices.filter(animal => animal.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setBugsAndFish(filteredList);
     } else if (selected === "Fish") {
-      filteredList = fishPrices.filter(fish => fish.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+      filteredList = currFishPrices.filter(fish => fish.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setFishes(filteredList);
     } else if (selected === "Bugs") {
-      filteredList = bugPrices.filter(bug => bug.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+      filteredList = currBugPrices.filter(bug => bug.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setBugs(filteredList);
-    }
+    } 
     setFilterValue(e.target.value);
   }
 
