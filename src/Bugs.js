@@ -4,7 +4,7 @@ export default function Bugs(props) {
     const [modal, setModal] = useState('');
     var formatter = new Intl.NumberFormat();
 
-    let mappedBugs = props.bugs.map( (bug, id) => <div className="animal" key={id} onClick={() => expand(bug)}>{bug.name} <p className="prices">{formatter.format(bug.price)}</p> </div>);
+    let mappedBugs = props.bugs.map( (bug, id) => <div className="animal" key={id} onClick={() => expand(bug)}>{bug.name} <p className="prices">{formatter.format(bug.price)}<img className="bells-img" src={process.env.PUBLIC_URL + "/images/BellIcon.png"} alt="bell icon" /></p></div>);
 
     let expand = (bug) => {
         let content = (
