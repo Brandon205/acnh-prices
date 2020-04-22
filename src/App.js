@@ -79,7 +79,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Animal Crossing New Horizons Prices</h1>
+      <h1 className="title">Animal Crossing New Horizons Prices</h1>
       <hr className="header-hr" />
       <header>
         <div className={selected === "Fish" ? "tabs tab-bkg" : "tabs"} onClick={() => { setSelected('Fish'); setFilterValue(''); }}>Fish</div>
@@ -96,6 +96,8 @@ export default function App() {
       <div className="list-top"><button className="sort-button" onClick={() => { sortByName(); setFilterValue('') }}>Name</button> <button className="sort-button" onClick={() => { sortByPrice(); setFilterValue('') }}>Price</button></div>
       </div>
       {content}
+      <hr className="header-hr" />
+      <footer><p>Social Links</p><p>ACNH PRICES ©2020</p><p>Created By: <a href="https://github.com/Brandon205" rel="noopener noreferrer" >brandon205</a></p></footer>
     </div>
   )
 }

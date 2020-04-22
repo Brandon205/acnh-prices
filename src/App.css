@@ -35,6 +35,21 @@ img {
   max-width: 75px;
 }
 
+footer {
+  background-color: #fdfdcd;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer p {
+  margin: 10px;
+}
+
+.title {
+  background-color: #fdfdcd
+}
+
 .header-hr {
   border: 0;
   height: 2px;
