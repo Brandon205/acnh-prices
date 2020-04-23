@@ -46,6 +46,11 @@ footer p {
   margin: 10px;
 }
 
+.fab {
+  padding: 10px;
+  color: black;
+}
+
 .title {
   background-color: #fdfdcd
 }

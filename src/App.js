@@ -97,7 +97,13 @@ export default function App() {
       </div>
       {content}
       <hr className="header-hr" />
-      <footer><p>Social Links</p><p>ACNH PRICES ©2020</p><p>Created By: <a href="https://github.com/Brandon205" rel="noopener noreferrer" >brandon205</a></p></footer>
+      <footer>
+        <div>
+          <div class="icons"><a href="https://twitter.com/brandonblack02" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a><a href="https://www.linkedin.com/in/brandonblack02/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a><a href="https://github.com/Brandon205" target="_blank" rel="noopener noreferrer"><i class="fab fa-github-square social-icons"></i></a></div>  
+        </div>
+        <p>ACNH PRICES ©2020</p>
+        <p>Created By: <a href="https://github.com/Brandon205" rel="noopener noreferrer" >brandon205</a></p>
+      </footer>
     </div>
   )
 }
