@@ -143,26 +143,38 @@ footer p {
   font-size: 2em;
   color: #834B1C;
   display: flex;
+  flex-direction: column;
+  align-content: center;
   background-color: #FDE46A;
-  justify-content: space-between;
-  width: 70vw;
-  height: 5vh;
+  width: 40vw;
+  max-width: 50vw;
+  /* flex-grow: 2; */
   border: 1px solid black;
+  border-radius: 15px;
   padding: 7px;
+  margin: 5px;
   cursor: pointer;
+}
+
+.animal-name {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.price-list  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
 }
 
 .prices {
   display: inline;
   margin: 0;
+  font-weight: lighter;
 }
 
-.price-list  {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 25px;
-}
 
 .list-top {
   font-size: 1.2em;

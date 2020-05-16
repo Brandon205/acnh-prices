@@ -89,7 +89,7 @@ export default function App() {
       <div className="wrap">
         <div className="search">
           <input type="text" value={filterValue} onChange={(e) => handleFilterChange(e)} className="searchTerm" placeholder="Search Here" />
-          <button type="submit" className="searchButton" onClick={() => setFilterValue('')}>
+          <button type="submit" className="searchButton" onClick={(e) => { setFilterValue(''); handleFilterChange(e); } }>
             X
           </button>
         </div>
@@ -99,7 +99,7 @@ export default function App() {
       <hr className="header-hr" />
       <footer>
         <div>
-          <div class="icons"><a href="https://twitter.com/brandonblack02" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a><a href="https://www.linkedin.com/in/brandonblack02/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a><a href="https://github.com/Brandon205" target="_blank" rel="noopener noreferrer"><i class="fab fa-github-square social-icons"></i></a></div>  
+          <div className="icons"><a href="https://twitter.com/brandonblack02" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a><a href="https://www.linkedin.com/in/brandonblack02/" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin"></i></a><a href="https://github.com/Brandon205" target="_blank" rel="noopener noreferrer"><i className="fab fa-github-square social-icons"></i></a></div>  
         </div>
         <p>ACNH PRICES ©2020</p>
         <p>Created By: <a href="https://github.com/Brandon205" rel="noopener noreferrer" target="_blank">brandon205</a></p>
