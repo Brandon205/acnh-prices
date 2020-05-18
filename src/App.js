@@ -18,43 +18,76 @@ export default function App() {
 
   const [selected, setSelected] = useState('AllPrices');
   const [filterValue, setFilterValue] = useState('');
+  const [filterby, setFilterby] = useState('name');
   const [fishes, setFishes] = useState(fishPrices); // Fish to show 
   const [bugs, setBugs] = useState(objBugPrices);  // Bugs to show
   const [bugsAndFish, setBugsAndFish] = useState(objAllPrices); // All to show
 
   // For sorting by price rather than name
-  let sortByPrice = () => {
-    if (selected === 'AllPrices') {
-      currAllPrices = quicksort(allPrices)
-      setBugsAndFish(currAllPrices);
-    } else if (selected === 'Fish') {
-      currFishPrices = quicksort(fishPrices)
-      setFishes(currFishPrices)
-    } else if (selected === 'Bugs') {
-      currBugPrices = quicksort(bugPrices)
-      setBugs(currBugPrices)
-    }
-  }
+  // let
   // For sorting by name rather than price
-  let sortByName = () => {
-    if (selected === 'AllPrices') {
-      setBugsAndFish(objAllPrices);
-    } else if (selected === 'Fish') {
-      setFishes(objFishPrices);
-    } else if (selected === 'Bugs') {
-      setBugs(objBugPrices);
-    }
-  }
+  // let sortByName = () => {
+  //   if (selected === 'AllPrices') {
+  //     setBugsAndFish(objAllPrices);
+  //   } else if (selected === 'Fish') {
+  //     setFishes(objFishPrices);
+  //   } else if (selected === 'Bugs') {
+  //     setBugs(objBugPrices);
+  //   }
+  // }
 
   let filteredList = "";
-  let handleFilterChange = (e) => {
-    if (selected === "AllPrices") { // Set the props for the thing to render to the filtered list
+  let regexNorth = /(.+(\,)|(Year-Round))/g;
+  let regexSouth = /((\s).+|(Year-Round))/g;
+  let handleFilterChange = (e) => { // Handles the filtering of all of the items 
+    if (selected === "AllPrices" && filterby === 'name') { 
       filteredList = currAllPrices.filter(animal => animal.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setBugsAndFish(filteredList);
-    } else if (selected === "Fish") {
+    } else if (selected === "Fish" && filterby === 'name') {
       filteredList = currFishPrices.filter(fish => fish.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setFishes(filteredList);
-    } else if (selected === "Bugs") {
+    } else if (selected === "Bugs" && filterby === 'name') {
+      filteredList = currBugPrices.filter(bug => bug.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+      setBugs(filteredList);
+    } 
+    if (selected === "AllPrices" && filterby === 'price') { 
+      filteredList = currAllPrices.filter(animal => animal.price.toString().startsWith(e.target.value));
+      setBugsAndFish(filteredList);
+    } else if (selected === "Fish" && filterby === 'price') {
+      filteredList = currFishPrices.filter(fish => fish.price.toString().startsWith(e.target.value));
+      setFishes(filteredList);
+    } else if (selected === "Bugs" && filterby === 'price') {
+      filteredList = currBugPrices.filter(bug => bug.price.toString().startsWith(e.target.value));
+      setBugs(filteredList);
+    } 
+    if (selected === "AllPrices" && filterby === 'location') { 
+      filteredList = currAllPrices.filter(animal => animal.location.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+      setBugsAndFish(filteredList);
+    } else if (selected === "Fish" && filterby === 'location') {
+      filteredList = currFishPrices.filter(fish => fish.location.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+      setFishes(filteredList);
+    } else if (selected === "Bugs" && filterby === 'location') {
+      filteredList = currBugPrices.filter(bug => bug.location.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+      setBugs(filteredList);
+    } 
+    if (selected === "AllPrices" && filterby === 'northDate') { 
+      console.log(typeof(currAllPrices[0].months))
+      filteredList = currAllPrices.filter(animal => animal.months.match(regexNorth).toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+      setBugsAndFish(filteredList);
+    } else if (selected === "Fish" && filterby === 'northDate') {
+      filteredList = currFishPrices.filter(fish => fish.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+      setFishes(filteredList);
+    } else if (selected === "Bugs" && filterby === 'northDate') {
+      filteredList = currBugPrices.filter(bug => bug.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+      setBugs(filteredList);
+    } 
+    if (selected === "AllPrices" && filterby === 'southDate') { 
+      filteredList = currAllPrices.filter(animal => animal.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+      setBugsAndFish(filteredList);
+    } else if (selected === "Fish" && filterby === 'southDate') {
+      filteredList = currFishPrices.filter(fish => fish.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+      setFishes(filteredList);
+    } else if (selected === "Bugs" && filterby === 'southDate') {
       filteredList = currBugPrices.filter(bug => bug.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setBugs(filteredList);
     } 
@@ -93,7 +126,18 @@ export default function App() {
             X
           </button>
         </div>
-      <div className="list-top"><button className="sort-button" onClick={() => { sortByName(); setFilterValue('') }}>Name</button> <button className="sort-button" onClick={() => { sortByPrice(); setFilterValue('') }}>Price</button></div>
+      <div className="list-top">
+        <label htmlFor="filter">Search Filter:</label>
+        <select name="filters" id="filter" onChange={(e) => setFilterby(e.target.value)}>
+          <option value="name" defaultValue>Name</option>
+          <option value="price">Price</option>
+          <option value="location">Location</option>
+          <option value="northDate">Dates (Northern)</option>
+          <option value="southDate">Dates (Southern)</option>
+        </select>
+        {/* <button className="sort-button" onClick={() => { sortByName(); setFilterValue('') }}>Name</button>
+        <button className="sort-button" onClick={() => { sortByPrice(); setFilterValue('') }}>Price</button> */}
+      </div>
       </div>
       {content}
       <hr className="header-hr" />
