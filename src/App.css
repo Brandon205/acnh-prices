@@ -148,7 +148,6 @@ footer p {
   background-color: #FDE46A;
   width: 40vw;
   max-width: 50vw;
-  /* flex-grow: 2; */
   border: 1px solid black;
   border-radius: 15px;
   padding: 7px;
@@ -165,8 +164,10 @@ footer p {
   display: flex;
   justify-content: center;
   align-items: center;
+  max-height: 1200px;
   margin-bottom: 25px;
   flex-wrap: wrap;
+  overflow: auto;
 }
 
 .prices {
