@@ -23,19 +23,6 @@ export default function App() {
   const [bugs, setBugs] = useState(objBugPrices);  // Bugs to show
   const [bugsAndFish, setBugsAndFish] = useState(objAllPrices); // All to show
 
-  // For sorting by price rather than name
-  // let
-  // For sorting by name rather than price
-  // let sortByName = () => {
-  //   if (selected === 'AllPrices') {
-  //     setBugsAndFish(objAllPrices);
-  //   } else if (selected === 'Fish') {
-  //     setFishes(objFishPrices);
-  //   } else if (selected === 'Bugs') {
-  //     setBugs(objBugPrices);
-  //   }
-  // }
-
   let filteredList = "";
   let regexNorth = /(.+(\,)|(Year-Round))/g;
   let regexSouth = /((\s).+|(Year-Round))/g;
@@ -77,17 +64,17 @@ export default function App() {
       filteredList = currFishPrices.filter(fish => fish.months.match(regexNorth)[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setFishes(filteredList);
     } else if (selected === "Bugs" && filterby === 'northDate') {
-      filteredList = currBugPrices.filter(bug => bug.months.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+      filteredList = currBugPrices.filter(bug => bug.months.match(regexNorth)[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setBugs(filteredList);
     } 
     if (selected === "AllPrices" && filterby === 'southDate') { 
-      filteredList = currAllPrices.filter(animal => animal.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+      filteredList = currAllPrices.filter(animal => animal.months.match(regexSouth)[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setBugsAndFish(filteredList);
     } else if (selected === "Fish" && filterby === 'southDate') {
-      filteredList = currFishPrices.filter(fish => fish.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+      filteredList = currFishPrices.filter(fish => fish.months.match(regexSouth)[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setFishes(filteredList);
     } else if (selected === "Bugs" && filterby === 'southDate') {
-      filteredList = currBugPrices.filter(bug => bug.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+      filteredList = currBugPrices.filter(bug => bug.months.match(regexSouth)[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setBugs(filteredList);
     } 
     setFilterValue(e.target.value);
@@ -134,8 +121,6 @@ export default function App() {
           <option value="northDate">Dates (Northern)</option>
           <option value="southDate">Dates (Southern)</option>
         </select>
-        {/* <button className="sort-button" onClick={() => { sortByName(); setFilterValue('') }}>Name</button>
-        <button className="sort-button" onClick={() => { sortByPrice(); setFilterValue('') }}>Price</button> */}
       </div>
       </div>
       {content}

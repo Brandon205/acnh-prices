@@ -12,7 +12,7 @@
     {"name": "Barreleye", "location": "Sea", "price": 15000, "time": "9pm - 4am", "months": "Year-Round"},
     {"name": "Bell Cricket", "location": "On Ground", "price": 430, "time": "5pm - 8am", "months": "September-October(N), March-April(S)"},
     {"name": "Betta", "location": "River", "price": 2500, "time": "9am - 4pm", "months": "May-October(N), November-April(S)"},
-    {"name": "Bitterling", "location": "River", "price": 900, "time": "All Day", "months": "November-March(N), May-September"},
+    {"name": "Bitterling", "location": "River", "price": 900, "time": "All Day", "months": "November-March(N), May-September(S)"},
     {"name": "Black Bass", "location": "River", "price": 400, "time": "All Day", "months": "Year-Round"},
     {"name": "Blowfish", "location": "Sea", "price": 5000, "time": "6pm - 4am", "months": "November-February(N), May-August(S)"},
     {"name": "Blue Marlin", "location": "Pier", "price": 10000, "time": "All Day", "months": "July-September, November-April(N), January-March, May-November(S)"},
