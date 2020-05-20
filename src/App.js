@@ -19,7 +19,7 @@ export default function App() {
   const [selected, setSelected] = useState('AllPrices');
   const [filterValue, setFilterValue] = useState('');
   const [filterby, setFilterby] = useState('name');
-  const [fishes, setFishes] = useState(fishPrices); // Fish to show 
+  const [fishes, setFishes] = useState(objFishPrices); // Fish to show 
   const [bugs, setBugs] = useState(objBugPrices);  // Bugs to show
   const [bugsAndFish, setBugsAndFish] = useState(objAllPrices); // All to show
 
@@ -71,14 +71,13 @@ export default function App() {
       setBugs(filteredList);
     } 
     if (selected === "AllPrices" && filterby === 'northDate') { 
-      console.log(typeof(currAllPrices[0].months))
-      filteredList = currAllPrices.filter(animal => animal.months.match(regexNorth).toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+      filteredList = currAllPrices.filter(animal => animal.months.match(regexNorth)[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setBugsAndFish(filteredList);
     } else if (selected === "Fish" && filterby === 'northDate') {
-      filteredList = currFishPrices.filter(fish => fish.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+      filteredList = currFishPrices.filter(fish => fish.months.match(regexNorth)[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setFishes(filteredList);
     } else if (selected === "Bugs" && filterby === 'northDate') {
-      filteredList = currBugPrices.filter(bug => bug.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+      filteredList = currBugPrices.filter(bug => bug.months.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setBugs(filteredList);
     } 
     if (selected === "AllPrices" && filterby === 'southDate') { 
