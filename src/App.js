@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import quicksort from './sorting';
 import fishPrices from './assets/fish.json';
 import bugPrices from './assets/bugs.json';
 import allPrices from './assets/allAnimals.json';
