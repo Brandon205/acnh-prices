@@ -22,7 +22,7 @@
     {"name": "Crucian Carp", "location": "River", "price": 160, "time": "All Day", "months": "Year-Round"},
     {"name": "Dab", "location": "Sea", "price": 300, "time": "All Dau", "months": "October-April(N), April-October(S)"},
     {"name": "Dace", "location": "River", "price": 240, "time": "4pm - 9am", "months": "Year-Round"},
-    {"name": "Dorado", "location": "River", "price": 150000, "time": "4am - 9pm", "months": "June-September(N), December-March(S)"},
+    {"name": "Dorado", "location": "River", "price": 15000, "time": "4am - 9pm", "months": "June-September(N), December-March(S)"},
     {"name": "Football Fish", "location": "Sea", "price": 2500, "time": "4pm - 9am", "months": "November-March(N), May-September(S)"},
     {"name": "Freshwater Goby", "location": "River", "price": 400, "time": "4pm - 9am", "months": "Year-Round"},
     {"name": "Frog", "location": "Pond", "price": 120, "time": "All Day", "months": "May-August(N), November-February(S)"},
