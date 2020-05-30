@@ -14,7 +14,6 @@ export default function Display(props) {
     <div className="animal" key={id} onClick={() => expand(animal)}>
         <>
             <p className="animal-name">{animal.name}</p>
-            {props.all ? <button onClick={() => setFavorite(animal.name)}>+</button> : ''}
         </>
         <hr className="modal-hr" />
         <>
@@ -29,6 +28,7 @@ export default function Display(props) {
                 <div className="modal-content">
                     <img src={process.env.PUBLIC_URL + '/images/' + animal.name + '.png'} alt={animal[0]}/>
                     <h1>{animal.name}</h1>
+                    {props.all ? <button className="favorite" onClick={() => setFavorite(animal.name)}>+ Add to Your List</button> : ''}
                     <hr className="modal-hr" />
                     <h3>{animal.location}</h3>
                     <h3>Sells for {formatter.format(animal.price)} bells</h3>

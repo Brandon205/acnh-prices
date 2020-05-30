@@ -81,6 +81,15 @@ footer p {
   display: flex;
 }
 
+.favorite {
+  border-radius: 16px;
+  background-color: #FDE46A;
+  color: #834B1C;
+  padding: 0 11px;
+  font-size: 1.5em;
+  border: 1px solid black;
+}
+
 .searchTerm {
   width: 100%;
   font-size: 1.8em;

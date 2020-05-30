@@ -5,6 +5,12 @@ export default function YourList(props) {
     const [modal, setModal] = useState('');
     var formatter = new Intl.NumberFormat();
 
+    let removeFavorite = (name) => {
+        let ls = localStorage.getItem('animals').split(',');
+        ls.splice(ls.indexOf(name), 1);
+        localStorage.setItem('animals', ls);
+    }
+
     let content;
     let displayArr = [];
     if (localStorage.getItem('animals') === null) { // If there are favorited animals then it should loop through them
@@ -17,6 +23,7 @@ export default function YourList(props) {
                     displayArr.push(item);
                     return true;
                 }
+                return false;
             });
         })
     };
@@ -42,6 +49,7 @@ export default function YourList(props) {
                 <div className="modal-content">
                     <img src={process.env.PUBLIC_URL + '/images/' + animal.name + '.png'} alt={animal[0]}/>
                     <h1>{animal.name}</h1>
+                    <button className="favorite" onClick={() => removeFavorite(animal.name)}>- Remove from Your List</button>
                     <hr className="modal-hr" />
                     <h3>{animal.location}</h3>
                     <h3>Sells for {formatter.format(animal.price)} bells</h3>
