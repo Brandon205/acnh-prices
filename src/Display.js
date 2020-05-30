@@ -4,10 +4,17 @@ export default function Display(props) {
     const [modal, setModal] = useState('');
     var formatter = new Intl.NumberFormat();
 
+    let setFavorite = (name) => {
+        let oldStorage = localStorage.getItem('animals').split(',')
+        oldStorage.push(name)
+        localStorage.setItem('animals', oldStorage);
+    }
+
     let mappedAnimals = props.list.map( (animal, id) => 
     <div className="animal" key={id} onClick={() => expand(animal)}>
         <>
             <p className="animal-name">{animal.name}</p>
+            {props.all ? <button onClick={() => setFavorite(animal.name)}>+</button> : ''}
         </>
         <hr className="modal-hr" />
         <>

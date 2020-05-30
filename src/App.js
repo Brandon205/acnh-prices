@@ -28,7 +28,7 @@ export default function App() {
   const [bugsAndFish, setBugsAndFish] = useState(objAllPrices); // All to show
 
   let filteredList = "";
-  let regexNorth = /(.+(\,)|(Year-Round))/g;
+  let regexNorth = /(.+(,)|(Year-Round))/g;
   let regexSouth = /((\s).+|(Year-Round))/g;
   let handleFilterChange = (e) => { // Handles the filtering of all of the items 
     if (selected === "AllPrices" && filterby === 'name') { 
@@ -88,10 +88,11 @@ export default function App() {
     let content;
     switch(selected) {
       case 'AllPrices':
-        content = (<BugAndFish all={bugsAndFish} />);
+        content = (<Display list={bugsAndFish} all={true} />);
         break;
-      case 'Yours':
+      case 'YourList':
         content = (<YourList list={bugsAndFish} />)
+        break;
       case 'Misc':
         content = (<Display list={miscs} />);
         break;
@@ -105,7 +106,7 @@ export default function App() {
       <hr className="header-hr" />
       <header>
         <div className={selected === "Fish" ? "tabs tab-bkg" : "tabs"} onClick={() => { setSelected('AllPrices'); setFilterValue(''); }}>Critters</div>
-        <div className={selected === "Yours" ? "tabs tab-bkg" : "tabs"} onClick={() => { setSelected('Yours'); setFilterValue(''); }}>Saved List</div>
+        <div className={selected === "YourList" ? "tabs tab-bkg" : "tabs"} onClick={() => { setSelected('YourList'); setFilterValue(''); }}>Saved List</div>
         <div className={selected === "Misc" ? "tabs tab-bkg" : "tabs"} onClick={() => { setSelected('Misc'); setFilterValue(''); }}>Misc Prices</div>
       </header>
       <div className="wrap">
