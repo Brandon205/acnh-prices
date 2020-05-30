@@ -9,6 +9,7 @@ const objMiscPrices = [...miscPrices];
 const objAllPrices = [...allPrices];
 export default function App() {
   let currAllPrices = allPrices;
+  let currMiscPrices = miscPrices;
 
   const [selected, setSelected] = useState('AllPrices');
   const [filterValue, setFilterValue] = useState('');
@@ -23,52 +24,31 @@ export default function App() {
     if (selected === "AllPrices" && filterby === 'name') { 
       filteredList = currAllPrices.filter(animal => animal.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setBugsAndFish(filteredList);
-    // } else if (selected === "Fish" && filterby === 'name') {
-    //   filteredList = currFishPrices.filter(fish => fish.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
-    //   setFishes(filteredList);
-    // } else if (selected === "Bugs" && filterby === 'name') {
-    //   filteredList = currBugPrices.filter(bug => bug.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
-    //   setBugs(filteredList);
+    } else if (selected === "Misc" && filterby === 'name') {
+      filteredList = currMiscPrices.filter(item => item.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+      setMiscs(filteredList);
     }
     if (selected === "AllPrices" && filterby === 'price') { 
       filteredList = currAllPrices.filter(animal => animal.price.toString().startsWith(e.target.value));
       setBugsAndFish(filteredList);
-    // } else if (selected === "Fish" && filterby === 'price') {
-    //   filteredList = currFishPrices.filter(fish => fish.price.toString().startsWith(e.target.value));
-    //   setFishes(filteredList);
-    // } else if (selected === "Bugs" && filterby === 'price') {
-    //   filteredList = currBugPrices.filter(bug => bug.price.toString().startsWith(e.target.value));
-    //   setBugs(filteredList);
+    } else if (selected === "Misc" && filterby === 'price') {
+      filteredList = currMiscPrices.filter(item => item.price.toString().startsWith(e.target.value));
+      setMiscs(filteredList);
     } 
     if (selected === "AllPrices" && filterby === 'location') { 
       filteredList = currAllPrices.filter(animal => animal.location.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setBugsAndFish(filteredList);
-    // } else if (selected === "Fish" && filterby === 'location') {
-    //   filteredList = currFishPrices.filter(fish => fish.location.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
-    //   setFishes(filteredList);
-    // } else if (selected === "Bugs" && filterby === 'location') {
-    //   filteredList = currBugPrices.filter(bug => bug.location.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
-    //   setBugs(filteredList);
+    } else if (selected === "Misc" && filterby === 'location') {
+      filteredList = currMiscPrices.filter(item => item.location.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+      setMiscs(filteredList);
     } 
     if (selected === "AllPrices" && filterby === 'northDate') { 
       filteredList = currAllPrices.filter(animal => animal.months.match(regexNorth)[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setBugsAndFish(filteredList);
-    // } else if (selected === "Fish" && filterby === 'northDate') {
-    //   filteredList = currFishPrices.filter(fish => fish.months.match(regexNorth)[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
-    //   setFishes(filteredList);
-    // } else if (selected === "Bugs" && filterby === 'northDate') {
-    //   filteredList = currBugPrices.filter(bug => bug.months.match(regexNorth)[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
-    //   setBugs(filteredList);
     } 
     if (selected === "AllPrices" && filterby === 'southDate') { 
       filteredList = currAllPrices.filter(animal => animal.months.match(regexSouth)[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setBugsAndFish(filteredList);
-    // } else if (selected === "Fish" && filterby === 'southDate') {
-    //   filteredList = currFishPrices.filter(fish => fish.months.match(regexSouth)[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
-    //   setFishes(filteredList);
-    // } else if (selected === "Bugs" && filterby === 'southDate') {
-    //   filteredList = currBugPrices.filter(bug => bug.months.match(regexSouth)[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
-    //   setBugs(filteredList);
     } 
     setFilterValue(e.target.value);
   }
@@ -111,8 +91,8 @@ export default function App() {
           <option value="name" defaultValue>Name</option>
           <option value="price">Price</option>
           <option value="location">Location</option>
-          <option value="northDate">Dates (Northern)</option>
-          <option value="southDate">Dates (Southern)</option>
+          {selected === "Misc" ? '' : <option value="northDate">Dates (Northern)</option>}
+          {selected ==="Misc" ? '' : <option value="southDate">Dates (Southern)</option>}
         </select>
       </div>
       </div>
