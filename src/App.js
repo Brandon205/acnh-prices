@@ -3,9 +3,6 @@ import React, { useState } from 'react';
 // import bugPrices from './assets/bugs.json';
 import miscPrices from './assets/misc.json';
 import allPrices from './assets/allAnimals.json';
-// import Fish from './Fish';
-// import Bugs from './Bugs';
-import BugAndFish from './BugAndFish';
 import YourList from './YourList';
 import Display from './Display';
 import './App.css';
@@ -97,7 +94,7 @@ export default function App() {
         content = (<Display list={miscs} />);
         break;
       default:
-        content = (<BugAndFish all={bugsAndFish} />);
+        content = (<Display list={bugsAndFish} />);
     }
 
   return (
