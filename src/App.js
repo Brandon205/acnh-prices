@@ -60,7 +60,7 @@ export default function App() {
         content = (<Display list={bugsAndFish} all={true} />);
         break;
       case 'YourList':
-        content = (<YourList list={bugsAndFish} />)
+        content = (<YourList />)
         break;
       case 'Misc':
         content = (<Display list={miscs} />);

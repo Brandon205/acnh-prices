@@ -1,15 +1,9 @@
 import React, { useState } from 'react';
+import Display from './Display';
 import allPrices from './assets/allAnimals.json';
 
-export default function YourList(props) {
-    const [modal, setModal] = useState('');
-    var formatter = new Intl.NumberFormat();
-
-    let removeFavorite = (name) => {
-        let ls = localStorage.getItem('animals').split(',');
-        ls.splice(ls.indexOf(name), 1);
-        localStorage.setItem('animals', ls);
-    }
+export default function YourList() {
+    const [animals, setAnimals] = useState('');
 
     let content;
     let displayArr = [];
@@ -27,46 +21,11 @@ export default function YourList(props) {
             });
         })
     };
-    
-    let mappedAnimals = '';
-    if (displayArr.length > 0) {
-        mappedAnimals = displayArr.map( (animal, id) => 
-        <div className="animal" key={id} onClick={() => expand(animal)}>
-            <>
-                <p className="animal-name">{animal.name}</p>
-            </>
-            <hr className="modal-hr" />
-            <>
-                <p className="prices">{animal.location}</p>
-                <p className="prices">{formatter.format(animal.price)}<img className="bells-img" src={process.env.PUBLIC_URL + "/images/BellIcon.png"} alt="bell icon" /></p>
-            </>
-        </div> )
-    }
-
-    let expand = (animal) => {
-        let content = (
-            <div className="modal" onClick={() => setModal('')}>
-                <div className="modal-content">
-                    <img src={process.env.PUBLIC_URL + '/images/' + animal.name + '.png'} alt={animal[0]}/>
-                    <h1>{animal.name}</h1>
-                    <button className="favorite" onClick={() => removeFavorite(animal.name)}>- Remove from Your List</button>
-                    <hr className="modal-hr" />
-                    <h3>{animal.location}</h3>
-                    <h3>Sells for {formatter.format(animal.price)} bells</h3>
-                    <h3>{animal.time}</h3>
-                    <h3>{animal.months}</h3>
-                    <i>N - Northern Hemishpere, S - Southern Hemishpere</i>
-                </div>
-            </div>
-        )
-        setModal(content);
-    }
 
     return (
         <div className="price-list">
             {content}
-            {mappedAnimals}
-            {modal}
+            <Display list={displayArr} yours={true} set={() => setAnimals()}/>
         </div>
     )
 }

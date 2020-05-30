@@ -1,7 +1,15 @@
 [
-    {"name": "Agrias Butterfly", "location": "Flying", "price": 3000, "time": "8am - 5pm", "months": "April-September(N), November-March(S)"},
-    {"name": "Anchovy", "location": "Sea", "price": 200, "time": "4am - 9pm", "months": "Year-Round"},
-    {"name": "Angelfish", "location": "River", "price": 3000, "time": "4pm - 9am", "months": "May-October(N), November-April(S)"},
-    {"name": "Ant", "location": "Rotten Food", "price": 80, "time": "All Day", "months": "Year-Round"},
-    {"name": "Arapaima", "location": "River", "price": 10000, "time": "4pm - 9am", "months": "June-September(N), December-March(S)"}
+    {"name": "Conch", "price": 700, "location": "Seashore"},
+    {"name": "Coral", "price": 250, "location": "Seashore"},
+    {"name": "Cowrie", "price": 60, "location": "Seashore"},
+    {"name": "Giant Clam", "price": 450, "location": "Seashore"},
+    {"name": "Manila Clam", "price": 100, "location": "Seashore"},
+    {"name": "Oyster Shell", "price": 450, "location": "Seashore"},
+    {"name": "Pearl Oyster", "price": 1200, "location": "Seashore"},
+    {"name": "Porceletta", "price": 30, "location": "Seashore"},
+    {"name": "Sand Dollar", "price": 120, "location": "Seashore"},
+    {"name": "Scallop Shell", "price": 600, "location": "Seashore"},
+    {"name": "Sea Snail", "price": 80, "location": "Seashore"},
+    {"name": "Venus Comb", "price": 150, "location": "Seashore"},
+    {"name": "White Scallop", "price": 450, "location": "Seashore"}
 ]
