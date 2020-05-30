@@ -5,16 +5,21 @@ export default function Display(props) {
     var formatter = new Intl.NumberFormat();
 
     let setFavorite = (name) => {
-        let oldStorage = localStorage.getItem('animals').split(',')
-        oldStorage.push(name)
-        localStorage.setItem('animals', oldStorage);
+        let currStorage;
+        if (localStorage.getItem('animals') === null) {
+            currStorage = [];
+        } else {
+            currStorage = localStorage.getItem('animals').split(',') || [];
+        }
+        currStorage.push(name)
+        localStorage.setItem('animals', currStorage);
     }
 
     let removeFavorite = (name) => {
         let ls = localStorage.getItem('animals').split(',');
         ls.splice(ls.indexOf(name), 1);
         localStorage.setItem('animals', ls);
-        props.set(ls);
+        props.setAnimals(ls);
     }
 
     let mappedAnimals = props.list.map( (animal, id) => 
@@ -29,7 +34,7 @@ export default function Display(props) {
         </>
     </div> );
 
-    let expand = (animal) => {
+    let expand = (animal) => { // TODO: Make it so that it checks each of these against the names in LS then show add or remove based on that
         let content = (
             <div className="modal" onClick={() => setModal('')}>
                 <div className="modal-content">
