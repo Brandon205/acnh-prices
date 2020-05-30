@@ -1,25 +1,30 @@
 import React, { useState } from 'react';
-import fishPrices from './assets/fish.json';
-import bugPrices from './assets/bugs.json';
+// import fishPrices from './assets/fish.json';
+// import bugPrices from './assets/bugs.json';
+import miscPrices from './assets/misc.json';
 import allPrices from './assets/allAnimals.json';
-import Fish from './Fish';
-import Bugs from './Bugs';
+// import Fish from './Fish';
+// import Bugs from './Bugs';
 import BugAndFish from './BugAndFish';
+import YourList from './YourList';
+import Display from './Display';
 import './App.css';
 
-const objFishPrices = [...fishPrices];
-const objBugPrices = [...bugPrices];
+// const objFishPrices = [...fishPrices];
+// const objBugPrices = [...bugPrices];
+const objMiscPrices = [...miscPrices];
 const objAllPrices = [...allPrices];
 export default function App() {
-  let currFishPrices = fishPrices;
-  let currBugPrices = bugPrices;
+  // let currFishPrices = fishPrices;
+  // let currBugPrices = bugPrices;
   let currAllPrices = allPrices;
 
   const [selected, setSelected] = useState('AllPrices');
   const [filterValue, setFilterValue] = useState('');
   const [filterby, setFilterby] = useState('name');
-  const [fishes, setFishes] = useState(objFishPrices); // Fish to show 
-  const [bugs, setBugs] = useState(objBugPrices);  // Bugs to show
+  // const [fishes, setFishes] = useState(objFishPrices); // Fish to show 
+  // const [bugs, setBugs] = useState(objBugPrices);  // Bugs to show
+  const [miscs, setMiscs] = useState(objMiscPrices);
   const [bugsAndFish, setBugsAndFish] = useState(objAllPrices); // All to show
 
   let filteredList = "";
@@ -29,52 +34,52 @@ export default function App() {
     if (selected === "AllPrices" && filterby === 'name') { 
       filteredList = currAllPrices.filter(animal => animal.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setBugsAndFish(filteredList);
-    } else if (selected === "Fish" && filterby === 'name') {
-      filteredList = currFishPrices.filter(fish => fish.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
-      setFishes(filteredList);
-    } else if (selected === "Bugs" && filterby === 'name') {
-      filteredList = currBugPrices.filter(bug => bug.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
-      setBugs(filteredList);
-    } 
+    // } else if (selected === "Fish" && filterby === 'name') {
+    //   filteredList = currFishPrices.filter(fish => fish.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+    //   setFishes(filteredList);
+    // } else if (selected === "Bugs" && filterby === 'name') {
+    //   filteredList = currBugPrices.filter(bug => bug.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+    //   setBugs(filteredList);
+    }
     if (selected === "AllPrices" && filterby === 'price') { 
       filteredList = currAllPrices.filter(animal => animal.price.toString().startsWith(e.target.value));
       setBugsAndFish(filteredList);
-    } else if (selected === "Fish" && filterby === 'price') {
-      filteredList = currFishPrices.filter(fish => fish.price.toString().startsWith(e.target.value));
-      setFishes(filteredList);
-    } else if (selected === "Bugs" && filterby === 'price') {
-      filteredList = currBugPrices.filter(bug => bug.price.toString().startsWith(e.target.value));
-      setBugs(filteredList);
+    // } else if (selected === "Fish" && filterby === 'price') {
+    //   filteredList = currFishPrices.filter(fish => fish.price.toString().startsWith(e.target.value));
+    //   setFishes(filteredList);
+    // } else if (selected === "Bugs" && filterby === 'price') {
+    //   filteredList = currBugPrices.filter(bug => bug.price.toString().startsWith(e.target.value));
+    //   setBugs(filteredList);
     } 
     if (selected === "AllPrices" && filterby === 'location') { 
       filteredList = currAllPrices.filter(animal => animal.location.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setBugsAndFish(filteredList);
-    } else if (selected === "Fish" && filterby === 'location') {
-      filteredList = currFishPrices.filter(fish => fish.location.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
-      setFishes(filteredList);
-    } else if (selected === "Bugs" && filterby === 'location') {
-      filteredList = currBugPrices.filter(bug => bug.location.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
-      setBugs(filteredList);
+    // } else if (selected === "Fish" && filterby === 'location') {
+    //   filteredList = currFishPrices.filter(fish => fish.location.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+    //   setFishes(filteredList);
+    // } else if (selected === "Bugs" && filterby === 'location') {
+    //   filteredList = currBugPrices.filter(bug => bug.location.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+    //   setBugs(filteredList);
     } 
     if (selected === "AllPrices" && filterby === 'northDate') { 
       filteredList = currAllPrices.filter(animal => animal.months.match(regexNorth)[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setBugsAndFish(filteredList);
-    } else if (selected === "Fish" && filterby === 'northDate') {
-      filteredList = currFishPrices.filter(fish => fish.months.match(regexNorth)[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
-      setFishes(filteredList);
-    } else if (selected === "Bugs" && filterby === 'northDate') {
-      filteredList = currBugPrices.filter(bug => bug.months.match(regexNorth)[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
-      setBugs(filteredList);
+    // } else if (selected === "Fish" && filterby === 'northDate') {
+    //   filteredList = currFishPrices.filter(fish => fish.months.match(regexNorth)[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+    //   setFishes(filteredList);
+    // } else if (selected === "Bugs" && filterby === 'northDate') {
+    //   filteredList = currBugPrices.filter(bug => bug.months.match(regexNorth)[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+    //   setBugs(filteredList);
     } 
     if (selected === "AllPrices" && filterby === 'southDate') { 
       filteredList = currAllPrices.filter(animal => animal.months.match(regexSouth)[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
       setBugsAndFish(filteredList);
-    } else if (selected === "Fish" && filterby === 'southDate') {
-      filteredList = currFishPrices.filter(fish => fish.months.match(regexSouth)[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
-      setFishes(filteredList);
-    } else if (selected === "Bugs" && filterby === 'southDate') {
-      filteredList = currBugPrices.filter(bug => bug.months.match(regexSouth)[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
-      setBugs(filteredList);
+    // } else if (selected === "Fish" && filterby === 'southDate') {
+    //   filteredList = currFishPrices.filter(fish => fish.months.match(regexSouth)[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+    //   setFishes(filteredList);
+    // } else if (selected === "Bugs" && filterby === 'southDate') {
+    //   filteredList = currBugPrices.filter(bug => bug.months.match(regexSouth)[0].toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
+    //   setBugs(filteredList);
     } 
     setFilterValue(e.target.value);
   }
@@ -82,14 +87,13 @@ export default function App() {
     // To display the correct content
     let content;
     switch(selected) {
-      case 'Fish':
-        content = (<Fish fish={fishes} />);
-        break;
-      case 'Bugs':
-        content = (<Bugs bugs={bugs} />);
-        break;
       case 'AllPrices':
         content = (<BugAndFish all={bugsAndFish} />);
+        break;
+      case 'Yours':
+        content = (<YourList list={bugsAndFish} />)
+      case 'Misc':
+        content = (<Display list={miscs} />);
         break;
       default:
         content = (<BugAndFish all={bugsAndFish} />);
@@ -100,9 +104,9 @@ export default function App() {
       <h1 className="title">Animal Crossing New Horizons Prices</h1>
       <hr className="header-hr" />
       <header>
-        <div className={selected === "Fish" ? "tabs tab-bkg" : "tabs"} onClick={() => { setSelected('Fish'); setFilterValue(''); }}>Fish</div>
-        <div className={selected === "AllPrices" ? "tabs tab-bkg" : "tabs"} onClick={() => { setSelected('AllPrices'); setFilterValue(''); }}>All Prices</div>
-        <div className={selected === "Bugs" ? "tabs tab-bkg" : "tabs"} onClick={() => { setSelected('Bugs'); setFilterValue(''); }}>Bugs</div>
+        <div className={selected === "Fish" ? "tabs tab-bkg" : "tabs"} onClick={() => { setSelected('AllPrices'); setFilterValue(''); }}>Critters</div>
+        <div className={selected === "Yours" ? "tabs tab-bkg" : "tabs"} onClick={() => { setSelected('Yours'); setFilterValue(''); }}>Saved List</div>
+        <div className={selected === "Misc" ? "tabs tab-bkg" : "tabs"} onClick={() => { setSelected('Misc'); setFilterValue(''); }}>Misc Prices</div>
       </header>
       <div className="wrap">
         <div className="search">

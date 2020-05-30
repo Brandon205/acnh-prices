@@ -1,0 +1,7 @@
+[
+    {"name": "Agrias Butterfly", "location": "Flying", "price": 3000, "time": "8am - 5pm", "months": "April-September(N), November-March(S)"},
+    {"name": "Anchovy", "location": "Sea", "price": 200, "time": "4am - 9pm", "months": "Year-Round"},
+    {"name": "Angelfish", "location": "River", "price": 3000, "time": "4pm - 9am", "months": "May-October(N), November-April(S)"},
+    {"name": "Ant", "location": "Rotten Food", "price": 80, "time": "All Day", "months": "Year-Round"},
+    {"name": "Arapaima", "location": "River", "price": 10000, "time": "4pm - 9am", "months": "June-September(N), December-March(S)"}
+]
