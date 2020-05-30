@@ -1,28 +1,20 @@
 import React, { useState } from 'react';
-// import fishPrices from './assets/fish.json';
-// import bugPrices from './assets/bugs.json';
 import miscPrices from './assets/misc.json';
 import allPrices from './assets/allAnimals.json';
 import YourList from './YourList';
 import Display from './Display';
 import './App.css';
 
-// const objFishPrices = [...fishPrices];
-// const objBugPrices = [...bugPrices];
 const objMiscPrices = [...miscPrices];
 const objAllPrices = [...allPrices];
 export default function App() {
-  // let currFishPrices = fishPrices;
-  // let currBugPrices = bugPrices;
   let currAllPrices = allPrices;
 
   const [selected, setSelected] = useState('AllPrices');
   const [filterValue, setFilterValue] = useState('');
   const [filterby, setFilterby] = useState('name');
-  // const [fishes, setFishes] = useState(objFishPrices); // Fish to show 
-  // const [bugs, setBugs] = useState(objBugPrices);  // Bugs to show
   const [miscs, setMiscs] = useState(objMiscPrices);
-  const [bugsAndFish, setBugsAndFish] = useState(objAllPrices); // All to show
+  const [bugsAndFish, setBugsAndFish] = useState(objAllPrices); // Animals to show
 
   let filteredList = "";
   let regexNorth = /(.+(,)|(Year-Round))/g;
