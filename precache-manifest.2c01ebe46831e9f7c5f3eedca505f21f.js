@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "77e267bab3c71996924876f7f6c48a50",
+    "revision": "3fee8bd19baaf6a831ee3a13343387f6",
     "url": "/acnh-prices/index.html"
   },
   {
-    "revision": "7447f9b9333b2d4bead4",
-    "url": "/acnh-prices/static/css/main.261c03c3.chunk.css"
+    "revision": "73126ff2ecb4f5bc9b77",
+    "url": "/acnh-prices/static/css/main.ccf5891c.chunk.css"
   },
   {
-    "revision": "ada28db79b97f6cf1a0e",
-    "url": "/acnh-prices/static/js/2.75a3b977.chunk.js"
+    "revision": "4328f19dc2e00cce644a",
+    "url": "/acnh-prices/static/js/2.7c9b9e04.chunk.js"
   },
   {
     "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/acnh-prices/static/js/2.75a3b977.chunk.js.LICENSE.txt"
+    "url": "/acnh-prices/static/js/2.7c9b9e04.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7447f9b9333b2d4bead4",
-    "url": "/acnh-prices/static/js/main.7d7503c4.chunk.js"
+    "revision": "73126ff2ecb4f5bc9b77",
+    "url": "/acnh-prices/static/js/main.45744a03.chunk.js"
   },
   {
     "revision": "8b351df2052d76b8d84a",
