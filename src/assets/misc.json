@@ -10,6 +10,7 @@
     {"name": "Sand Dollar", "price": 120, "location": "Seashore"},
     {"name": "Scallop Shell", "price": 600, "location": "Seashore"},
     {"name": "Sea Snail", "price": 80, "location": "Seashore"},
+    {"name": "Summer Shell", "price": 600, "location": "Seashore"},
     {"name": "Venus Comb", "price": 150, "location": "Seashore"},
     {"name": "White Scallop", "price": 450, "location": "Seashore"}
 ]
