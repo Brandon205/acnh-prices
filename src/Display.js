@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export default function Display(props) { // Render Remove if found in the string that LS has and Add if not
+export default function Display(props) {
     const [modal, setModal] = useState('');
     const [display, setDisplay] = useState([]);
     var formatter = new Intl.NumberFormat();
@@ -49,7 +49,7 @@ export default function Display(props) { // Render Remove if found in the string
         </>
     </div> );
 
-    let expand = (animal) => { // TODO: Make it so that it checks each of these against the names in LS then show add or remove based on that
+    let expand = (animal) => {
         let content = (
             <div className="modal" onClick={() => setModal('')}>
                 <div className="modal-content">
