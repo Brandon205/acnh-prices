@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react';
 
-export default function Display(props) {
+export default function Display(props) { // Render Remove if found in the string that LS has and Add if not
     const [modal, setModal] = useState('');
     const [display, setDisplay] = useState([]);
     var formatter = new Intl.NumberFormat();
+    let ls;
+    if (localStorage.getItem('animals') === null || localStorage.getItem('animals').length === 0) { // For knowing what animals are favorited on the allAnimals page
+        ls = [];
+    } else {
+        ls = localStorage.getItem('animals');
+    }
 
     useEffect( () => {
         setDisplay(props.list)
@@ -49,8 +55,8 @@ export default function Display(props) {
                 <div className="modal-content">
                     <img src={process.env.PUBLIC_URL + '/images/' + animal.name + '.png'} alt={animal[0]}/>
                     <h1>{animal.name}</h1>
-                    {props.all ? <button className="favorite" onClick={() => setFavorite(animal.name)}>+ Add to Your List</button> : ''}
-                    {props.yours ? <button className="favorite" onClick={() => { removeFavorite(animal.name) }}>- Remove from Your List</button> : ''}
+                    {(!ls.includes(animal.name)) ? <button className="favorite" onClick={() => setFavorite(animal.name)}>+ Add to Your List</button> : ''}
+                    {ls.includes(animal.name) ? <button className="favorite" onClick={() => { removeFavorite(animal.name) }}>- Remove from Your List</button> : ''}
                     <hr className="modal-hr" />
                     <h3>{animal.location}</h3>
                     <h3>Sells for {formatter.format(animal.price)} bells</h3>

@@ -90,6 +90,10 @@ footer p {
   border: 1px solid black;
 }
 
+.no-animals {
+
+}
+
 .searchTerm {
   width: 100%;
   font-size: 1.8em;
@@ -156,7 +160,7 @@ footer p {
   align-content: center;
   background-color: #FDE46A;
   width: 40vw;
-  max-width: 50vw;
+  max-width: 40vw;
   border: 1px solid black;
   border-radius: 15px;
   padding: 7px;
@@ -232,9 +236,5 @@ footer p {
 @media only screen and (max-width: 500px) {
   .App { 
     font-size: .6em;
-  }
-
-  .animal {
-    overflow: scroll;
   }
 }
