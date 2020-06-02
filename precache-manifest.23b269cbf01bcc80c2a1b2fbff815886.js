@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a40692ec65d3e28be84ec2e4bb773ddf",
+    "revision": "0203450ea668f5640efa2cbbadc05617",
     "url": "/acnh-prices/index.html"
   },
   {
-    "revision": "f8b600bd92727dd4368e",
+    "revision": "0ab10a2e0009d6741214",
     "url": "/acnh-prices/static/css/main.83b16594.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/acnh-prices/static/js/2.650fde68.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f8b600bd92727dd4368e",
-    "url": "/acnh-prices/static/js/main.4a75aa2e.chunk.js"
+    "revision": "0ab10a2e0009d6741214",
+    "url": "/acnh-prices/static/js/main.31b0d827.chunk.js"
   },
   {
     "revision": "8b351df2052d76b8d84a",
