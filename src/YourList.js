@@ -22,7 +22,7 @@ export default function YourList() {
     };
 
     return (
-        <div className="price-list">
+        <div>
             {content}
             <Display list={displayArr} yours={true} />
         </div>
