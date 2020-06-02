@@ -22,9 +22,9 @@ export default function YourList() {
     };
 
     return (
-        <div>
+        <>
             {content}
             <Display list={displayArr} yours={true} />
-        </div>
+        </>
     )
 }
