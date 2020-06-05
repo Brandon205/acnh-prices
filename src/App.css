@@ -32,10 +32,6 @@ h1 {
   margin: 0;
 }
 
-img { 
-  max-width: 75px;
-}
-
 footer {
   background-color: #fdfdcd;
   font-size: 1.5em;
@@ -84,9 +80,9 @@ footer p {
 
 .bells-img {
   position: relative;
-  top: 5px;
-  max-width: 50px;
-  max-height: 50px;
+  top: 6px;
+  max-width: 40px;
+  max-height: 40px;
 }
 
 .search {
