@@ -74,7 +74,7 @@ export default function App() {
       <h1 className="title">Animal Crossing New Horizons Prices</h1>
       <hr className="header-hr" />
       <header>
-        <div className={selected === "AllPrices" ? "tabs tab-bkg" : "tabs"} onClick={() => { setSelected('AllPrices'); setFilterValue(''); }}>Critters</div>
+        <div className={selected === "AllPrices" ? "tabs tab-bkg" : "tabs"} onClick={() => { setSelected('AllPrices'); setFilterValue(''); }}>Bugs and Fish</div>
         <div className={selected === "YourList" ? "tabs tab-bkg" : "tabs"} onClick={() => { setSelected('YourList'); setFilterValue(''); }}>Saved List</div>
         <div className={selected === "Misc" ? "tabs tab-bkg" : "tabs"} onClick={() => { setSelected('Misc'); setFilterValue(''); }}>Misc Prices</div>
       </header>
